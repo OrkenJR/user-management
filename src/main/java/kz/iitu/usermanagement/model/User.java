@@ -1,9 +1,12 @@
 package kz.iitu.usermanagement.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.*;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
+import java.util.List;
+import java.util.Set;
 
 
 /**
@@ -24,12 +27,28 @@ import javax.persistence.*;
 public class User {
 
     @Id
-    @GeneratedValue(generator="system-uuid")
-    @GenericGenerator(name="system-uuid", strategy = "uuid")
+    @GeneratedValue(generator = "system-uuid")
+    @GenericGenerator(name = "system-uuid", strategy = "uuid")
     private String id;
 
     private String username;
 
     private String password;
 
+    private String firstName;
+
+    private String lastName;
+
+    @ManyToOne(fetch = FetchType.EAGER)
+    @Getter
+    @Setter
+    private User parent;
+
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "parent")
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
+    @Setter
+    private Set<User> children;
+
+    @ManyToMany(fetch = FetchType.EAGER)
+    List<Role> roles;
 }
