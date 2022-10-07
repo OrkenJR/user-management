@@ -1,5 +1,6 @@
 package kz.iitu.usermanagement.controller;
 
+import kz.iitu.cfaslib.controller.AbstractWrapper;
 import kz.iitu.usermanagement.model.User;
 import kz.iitu.usermanagement.service.UserService;
 import lombok.RequiredArgsConstructor;
@@ -21,7 +22,7 @@ import java.util.List;
  **/
 @RestController
 @RequiredArgsConstructor
-public class UserController extends AbstractController {
+public class UserController extends AbstractWrapper {
 
     private final UserService userService;
 
