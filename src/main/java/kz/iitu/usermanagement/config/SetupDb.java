@@ -15,7 +15,6 @@ import java.util.List;
  * При запуске заполняет базу, только для теста, надо вынести в dev профиль, если возможно
  *
  * @author Orken
- * @version 1.0.0
  **/
 @Component
 @RequiredArgsConstructor

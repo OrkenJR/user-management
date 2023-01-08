@@ -13,8 +13,6 @@ import java.util.Set;
  * dummy-user entity
  *
  * @author Orken
- * @version 1.0
- * @since 1.0
  **/
 
 @Entity

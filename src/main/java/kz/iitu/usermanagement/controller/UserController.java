@@ -13,12 +13,8 @@ import java.util.List;
 
 /**
  * Основной контроллер этого микросервиса
- * Чуть позже добавлю Swagger
- * И все эндпоинты которые возвращают лист по возможности оберну в Page, это обязательно
- * Также надо разделить эндпоинты на microservices/frontend, для удобства, чтобы в дальнейшем не было проблем с security
  *
  * @author Orken
- * @version 1.0.0
  **/
 @RestController
 @RequiredArgsConstructor
